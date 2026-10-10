@@ -1,0 +1,29 @@
+{
+    "name": "finops-realtime",
+    "version": "1.0.0",
+    "description": "FinOps Sentinel AI — Real-time event simulator and WebSocket gateway",
+    "main": "src/index.js",
+    "scripts": {
+        "build": "echo \"No build step required\"",
+        "start": "node --env-file=.env src/index.js",
+        "dev": "node --env-file=.env src/index.js",
+        "test": "jest"
+    },
+    "dependencies": {
+        "cors": "^2.8.6",
+        "express": "^4.18.2",
+        "pg": "^8.11.3",
+        "uuid": "^9.0.0",
+        "ws": "^8.16.0"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0"
+    },
+    "jest": {
+        "testMatch": [
+            "**/__tests__/**/*.test.js"
+        ],
+        "testEnvironment": "node"
+    },
+    "type": "module"
+}

@@ -1,0 +1,12 @@
+# Local development overrides — DO NOT commit real secrets.
+# Copy this file to application-local.yml and fill in your values.
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/finops
+
+app:
+  jwt:
+    secret: local-dev-secret-replace-in-production-min-32-chars
+
+server:
+  port: 8080

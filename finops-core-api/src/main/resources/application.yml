@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://db.ptrmpgyeldmqkrutvcgn.supabase.co:5432/postgres
+    username: postgres
+    password: SujiRama@123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      # CRITICAL: we do NOT let Hibernate touch the schema — it already exists in Supabase.
+      # 'validate' will confirm our entity mappings match the real columns at startup.
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: public
+
+server:
+  port: ${PORT:8080}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:local-dev-secret-replace-in-production-min-32-chars}
+    expiration-ms: 86400000  # 24 hours
